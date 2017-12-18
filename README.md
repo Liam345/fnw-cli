@@ -20,3 +20,6 @@ Command 2) To print a summary of values into the console
 
 Command 3) To get help
 ### `Stats` or  `Stats help`
+
+Command 4) Create a global link to run **Stats** from terminal
+### `npm link`
