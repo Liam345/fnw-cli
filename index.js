@@ -12,10 +12,10 @@ program
     console.log('  Examples:');
     console.log('\n');
     console.log("    1)To record values in filename:");
-    console.log("    Stats.exe record filename value [value 2, ... value n]");
+    console.log("    Stats record filename value [value 2, ... value n]");
     console.log('');
     console.log("    2)To summarise values in the file:");
-    console.log("    Stats.exe summarise filename");
+    console.log("    Stats summarise filename");
     console.log('\n');
   });
   

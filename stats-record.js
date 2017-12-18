@@ -3,20 +3,30 @@
 const program = require('commander');
 const fs = require('fs');
 
+function validateFilename(filename){
+  if(!filename.endsWith(".txt"))
+  {
+    console.error("error: Enter name of file after record. Filename not supported");
+    console.error("Filename must end with .txt");
+    console.error("'Stats' and 'Stats help' list available subcommands and examples.")
+    process.exit(1);
+  }
+}
+
+function checkArgLength(minArgLength){
+  if(process.argv.length <= minArgLength)
+  {
+    console.log("error: Atleast one numeric value must be given to filename");
+    process.exit(1);
+  }
+}
+
 function record(filename){
     let params = [];
-    if(!filename.endsWith(".txt"))
-    {
-      console.error("error: Enter name of file after record. Filename not supported");
-      console.error("Filename must end with .txt");
-      console.error("'Stats.exe' and 'Stats.exe help' list available subcommands and examples.")
-      process.exit(1);
-    }
-    if(process.argv.length < 4)
-    {
-      console.log("error: Atleast one numeric value must be given to filename");
-      process.exit(1);
-    }
+    validateFilename(filename);
+    const minArgSize = 3;
+    checkArgLength(minArgSize);
+
     for (let optionalIndex = 3; optionalIndex < process.argv.length; optionalIndex++ )
     {
         if(isNaN(process.argv[optionalIndex]))
